@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import {
   Box,
   Flex,
+  Icon,
   IconButton,
   Stack,
   Collapse,
@@ -38,6 +39,7 @@ import logoImage from '../../public/logo.svg';
  */
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const { isOpen: isUserOpen, onToggle: onUserToggle } = useDisclosure();
 
   console.log('WithSubnavigation :: isOpen ::', isOpen);
 
@@ -82,13 +84,20 @@ export default function WithSubnavigation() {
               aria-label={'Toggle Navigation'}
             />
 
-            <Box ml={0}>
-              <DesktopMainNav icon={HiBell} iconSize={6} href="#" label="Notification" children={null} />
-            </Box>
+            <IconButton
+              icon={<Icon as={HiBell} w={6} h={6} />}
+              variant={'ghost'}
+              aria-label={'Toggle Notification'}
+            />
             
-            <Box ml={3}>
-              <DesktopMainNav ml={3} icon={FaUser} iconSize={5} href="#" label="User" children={USER_NAV_ITEMS} />
-            </Box>
+            <IconButton
+              onClick={onUserToggle}
+              icon={
+                isUserOpen ? <CloseIcon w={3} h={3} /> : <Icon as={FaUser} w={5} h={5} />
+              }
+              variant={'ghost'}
+              aria-label={'Toggle Notification'}
+            />
 
           </Flex>
 
@@ -101,6 +110,10 @@ export default function WithSubnavigation() {
 
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
+      </Collapse>
+
+      <Collapse in={isUserOpen} animateOpacity>
+        <MobileUserNav />
       </Collapse>
     </Box>
   );
@@ -137,6 +150,19 @@ const MobileNav = () => {
   );
 };
 
+const MobileUserNav = () => {
+  return (
+    <Stack
+      bg={useColorModeValue('white', 'gray.800')}
+      p={4}
+      display={{ md: 'none' }}>
+
+      {USER_NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.id} {...navItem} />
+      ))}
+    </Stack>
+  );
+}
 
 
 
