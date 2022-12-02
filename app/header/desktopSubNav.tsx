@@ -1,3 +1,4 @@
+import { Box, Divider } from '@chakra-ui/react'
 import { NavItem } from './header.data';
 
 import {
@@ -7,6 +8,13 @@ import {
 } from '@chakra-ui/react';
 
 export const DesktopSubNav = ({ label, href }: NavItem) => {
+
+  if (label === '---') {
+    return <Box>
+      <Divider w='20%' borderColor='gray.700' ml={2} />
+    </Box>
+  }
+
   return (
     <Link
       href={href}
@@ -26,5 +34,6 @@ export const DesktopSubNav = ({ label, href }: NavItem) => {
         </Text>
     </Link>
   );
+
 };
 
