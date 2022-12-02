@@ -2,7 +2,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from "@chakra-ui/react";
 
-import Header from './header';
+import Header from './header/header';
 import Footer from './footer';
 import './globals.css';
 

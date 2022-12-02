@@ -1,13 +1,21 @@
+'use client';
+
 import Image from 'next/image'
 import styles from './page.module.css'
+
+import {
+  Text,
+} from '@chakra-ui/react';
+
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.https://github.com/SatoshiPortal/cyphernode/org"> Cyphernode Admin</a>
-        </h1>
+
+        <Text fontSize={['2em', '2.5em', '3em']} textAlign='center'>
+          Welcome to <b>Cyphernode Admin</b>
+        </Text>
 
       </main>
 
