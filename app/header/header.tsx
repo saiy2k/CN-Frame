@@ -30,7 +30,7 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 
-import logoImage from '../public/logo.svg';
+import logoImage from '../../public/logo.svg';
 
 /**
  * Base code Ref: https://chakra-templates.dev/navigation/navbar
@@ -38,6 +38,10 @@ import logoImage from '../public/logo.svg';
  * [Issue] Warning: Prop id did not match. Server: "popover-trigger-[n1]" Client: "popover-trigger-[n2]"
  * [Solution] https://github.com/chakra-ui/chakra-ui/issues/3020#issuecomment-949808770
  * Usage of 'id' and 'isLazy' in <Popover>
+ *
+ * [Issue] Warning: Portal: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.
+ * [Solution] https://github.com/chakra-ui/chakra-ui/issues/7057
+ * PR on it's way. Ignore for now.
  */
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
