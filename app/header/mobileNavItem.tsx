@@ -1,12 +1,14 @@
 import { NavItem } from './header.data';
 
 import {
-  Flex,
-  Text,
-  Stack,
+  Box,
   Collapse,
+  Divider,
+  Flex,
   Icon,
   Link,
+  Stack,
+  Text,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -54,11 +56,16 @@ export const MobileNavItem = ({ label, children, href }: NavItem) => {
           borderColor={useColorModeValue('gray.200', 'gray.700')}
           align={'start'}>
           {children &&
-            children.map((child) => (
-              <Link key={child.id} py={2} href={child.href}>
+            children.map((child) => {
+
+              if (child.label === '---') {
+                  return <Divider key={child.id} w='20%' borderColor='gray.700' ml={2} />
+              }
+
+              return <Link key={child.id} py={2} href={child.href}>
                 {child.label}
               </Link>
-            ))}
+            })}
         </Stack>
       </Collapse>
     </Stack>

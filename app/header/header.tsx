@@ -1,8 +1,10 @@
 'use client';
 
-import { Image } from '@chakra-ui/react'
+import { Image, useColorMode } from '@chakra-ui/react'
 import { HiBell } from 'react-icons/hi';
 import { FaUser } from 'react-icons/fa';
+import { BsSunFill } from 'react-icons/bs';
+import { BsMoonFill } from 'react-icons/bs';
 
 import {
   Box,
@@ -38,6 +40,9 @@ import logoImage from '../../public/logo.svg';
  * PR on it's way. Ignore for now.
  */
 export default function WithSubnavigation() {
+
+  const { colorMode, toggleColorMode } = useColorMode()
+
   const { isOpen, onToggle } = useDisclosure();
   const { isOpen: isUserOpen, onToggle: onUserToggle } = useDisclosure();
 
@@ -58,7 +63,7 @@ export default function WithSubnavigation() {
 
         <Flex justify={{ base: 'start', md: 'start' }}>
           <Image
-            src='/logo.svg'
+            src={useColorModeValue('/logo.svg', '/logo-white.svg')}
             alt="Bull Bitcoin logo"
             width={[120, 160]}
           />
@@ -76,7 +81,12 @@ export default function WithSubnavigation() {
             justify={'flex-end'}>
 
             <IconButton
-              onClick={onToggle}
+              onClick={() => {
+                onToggle();
+                if (isUserOpen) {
+                  onUserToggle();
+                }
+              }}
               icon={
                 isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
               }
@@ -91,13 +101,30 @@ export default function WithSubnavigation() {
             />
             
             <IconButton
-              onClick={onUserToggle}
+              onClick={() => {
+                onUserToggle();
+                if (isOpen) {
+                  onToggle();
+                }
+              }}
               icon={
                 isUserOpen ? <CloseIcon w={3} h={3} /> : <Icon as={FaUser} w={5} h={5} />
               }
               variant={'ghost'}
               aria-label={'Toggle Notification'}
             />
+
+            <IconButton 
+              onClick={toggleColorMode} 
+              icon={colorMode === 'light' ? <BsMoonFill /> : <BsSunFill /> }
+              variant={'ghost'}
+              mx={0}
+              aria-label="Toggle theme"
+              _hover={{
+                textDecoration: 'none',
+                color: useColorModeValue('brand', 'white'),
+              }} />
+
 
           </Flex>
 
@@ -121,8 +148,11 @@ export default function WithSubnavigation() {
 
 const DesktopNav = () => {
 
+  const { colorMode, toggleColorMode } = useColorMode()
+  console.log('DesktopNav :: colorMode', colorMode);
+
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} spacing={4} alignItems='center'>
       {NAV_ITEMS.map((navItem) => (
         <DesktopMainNav key={navItem.id} {...navItem} />
       ))}
@@ -130,6 +160,17 @@ const DesktopNav = () => {
       <DesktopMainNav icon={HiBell} iconSize={6} href="#" label="Notification" children={null} />
       
       <DesktopMainNav icon={FaUser} iconSize={5} href="#" label="User" children={USER_NAV_ITEMS} />
+
+      <IconButton 
+        onClick={toggleColorMode} 
+        icon={colorMode === 'light' ? <BsMoonFill /> : <BsSunFill /> }
+        variant={'ghost'}
+        mx={0}
+        aria-label="Toggle theme"
+        _hover={{
+          textDecoration: 'none',
+          color: useColorModeValue('brand', 'white'),
+        }} />
 
     </Stack>
   );
