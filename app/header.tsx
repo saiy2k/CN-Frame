@@ -33,10 +33,16 @@ import {
 import logoImage from '../public/logo.svg';
 
 /**
- * Ref: https://chakra-templates.dev/navigation/navbar
+ * Base code Ref: https://chakra-templates.dev/navigation/navbar
+ *
+ * [Issue] Warning: Prop id did not match. Server: "popover-trigger-[n1]" Client: "popover-trigger-[n2]"
+ * [Solution] https://github.com/chakra-ui/chakra-ui/issues/3020#issuecomment-949808770
+ * Usage of 'id' and 'isLazy' in <Popover>
  */
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+
+  console.log('WithSubnavigation :: isOpen ::', isOpen);
 
   return (
     <Box>
@@ -66,9 +72,10 @@ export default function WithSubnavigation() {
           spacing={6}>
 
           <Flex
-            flex={{ base: 1, md: 'auto' }}
-            ml={{ base: -2 }}
-            display={{ base: 'flex', md: 'none' }}>
+            display={{ base: 'flex', md: 'none' }}
+            justify={'flex-end'}
+            flex={{ base: 1, md: 'auto' }}>
+
             <IconButton
               onClick={onToggle}
               icon={
@@ -77,6 +84,7 @@ export default function WithSubnavigation() {
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
             />
+
           </Flex>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -102,11 +110,11 @@ const DesktopNav = () => {
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.id}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
+          <Popover trigger={'hover'} placement={'bottom-start'} id={'popover'} isLazy>
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? '#'}
+                href={navItem.href ?? 'google.com'}
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
@@ -139,7 +147,7 @@ const DesktopNav = () => {
       ))}
 
       <Box>
-        <Popover trigger={'hover'} placement={'bottom-start'}>
+        <Popover trigger={'hover'} placement={'bottom-start'} id={'popover'} isLazy>
           <PopoverTrigger>
             <Link> 
               <Icon as={HiBell} 
@@ -170,7 +178,7 @@ const DesktopNav = () => {
       </Box>
 
       <Box>
-        <Popover trigger={'hover'} placement={'bottom-start'}>
+        <Popover trigger={'hover'} placement={'bottom-start'} id={'popover'} isLazy>
           <PopoverTrigger>
             <Link> 
               <Icon as={FaUser} 
@@ -204,9 +212,9 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href, subLabel, id }: NavItem) => {
   return (
-    <Link
+  <Link
       href={href}
       role={'group'}
       display={'block'}
