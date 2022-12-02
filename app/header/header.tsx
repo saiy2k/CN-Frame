@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { Image } from '@chakra-ui/react'
 import { HiBell } from 'react-icons/hi';
 import { FaUser } from 'react-icons/fa';
 
@@ -56,9 +56,9 @@ export default function WithSubnavigation() {
 
         <Flex justify={{ base: 'start', md: 'start' }}>
           <Image
-            src={logoImage}
+            src='/logo.svg'
             alt="Bull Bitcoin logo"
-            width={160}
+            width={[120, 160]}
           />
         </Flex>
 
@@ -70,8 +70,8 @@ export default function WithSubnavigation() {
 
           <Flex
             display={{ base: 'flex', md: 'none' }}
-            justify={'flex-end'}
-            flex={{ base: 1, md: 'auto' }}>
+            alignItems='center'
+            justify={'flex-end'}>
 
             <IconButton
               onClick={onToggle}
@@ -81,6 +81,14 @@ export default function WithSubnavigation() {
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
             />
+
+            <Box ml={0}>
+              <DesktopMainNav icon={HiBell} iconSize={6} href="#" label="Notification" children={null} />
+            </Box>
+            
+            <Box ml={3}>
+              <DesktopMainNav ml={3} icon={FaUser} iconSize={5} href="#" label="User" children={USER_NAV_ITEMS} />
+            </Box>
 
           </Flex>
 
@@ -121,6 +129,7 @@ const MobileNav = () => {
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
+
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.id} {...navItem} />
       ))}

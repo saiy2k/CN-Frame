@@ -17,55 +17,54 @@ export const DesktopMainNav = ({href, children, label, icon, iconSize}: any) => 
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Box>
-      <Popover trigger={'hover'} placement={'bottom-start'} id={'popover'} isLazy>
-        <PopoverTrigger>
+    <Popover trigger={'hover'} placement={'bottom-start'} id={'popover'} isLazy>
+      <PopoverTrigger>
 
-          { icon ?
-            <Link> 
-              <Icon as={icon} 
-                w={iconSize}
-                h={iconSize}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }} />
-            </Link>
-            :
-            <Link
-              p={2}
-              href={href ?? '#'}
-              fontSize={'sm'}
-              fontWeight={500}
-              color={linkColor}
+        { icon ?
+          <Link> 
+            <Icon as={icon} 
+              w={iconSize}
+              h={iconSize}
+              mt={1}
               _hover={{
                 textDecoration: 'none',
                 color: linkHoverColor,
-              }}>
-              {label}
-            </Link>}
+              }} />
+          </Link>
+          :
+          <Link
+            p={2}
+            href={href ?? '#'}
+            fontSize={'sm'}
+            fontWeight={500}
+            color={linkColor}
+            _hover={{
+              textDecoration: 'none',
+              color: linkHoverColor,
+            }}>
+            {label}
+          </Link>}
 
 
-        </PopoverTrigger>
+      </PopoverTrigger>
 
-        {children && (
-          <PopoverContent
-            border={1}
-            borderStyle={'solid'}
-            borderColor={useColorModeValue('gray.800', 'gray.700')}
-            bg={popoverContentBgColor}
-            p={4}
-            rounded={'sm'}
-            w={'18em'}>
-            <Stack>
-              {children.map((child: any) => (
-                <DesktopSubNav key={child.id} {...child} />
-              ))}
-            </Stack>
-          </PopoverContent>
-        )}
-      </Popover>
-    </Box>
+      {children && (
+        <PopoverContent
+          border={1}
+          borderStyle={'solid'}
+          borderColor={useColorModeValue('gray.800', 'gray.700')}
+          bg={popoverContentBgColor}
+          p={4}
+          rounded={'sm'}
+          w={'18em'}>
+          <Stack>
+            {children.map((child: any) => (
+              <DesktopSubNav key={child.id} {...child} />
+            ))}
+          </Stack>
+        </PopoverContent>
+      )}
+    </Popover>
   );
 };
 
