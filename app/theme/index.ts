@@ -1,10 +1,9 @@
 import { ChakraTheme, DeepPartial, extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
+import { Dancing_Script, Inter, Raleway } from '@next/font/google';
 
 import { colors } from './colors';
-/*
 import { components } from './components'
 import { styles } from './styles'
-*/
 
 const theme: DeepPartial<ChakraTheme> = {
   config: {
@@ -15,9 +14,9 @@ const theme: DeepPartial<ChakraTheme> = {
     body: "'Inter', sans-serif",
     heading: "'Inter', sans-serif",
   },
-  // styles,
+  styles,
   colors,
-  // components,
+  components,
 }
 
 export function getBullBitcoinTheme(
@@ -26,23 +25,9 @@ export function getBullBitcoinTheme(
   return extendTheme(withDefaultColorScheme({ colorScheme: 'white' }), theme, themeAdditions)
 }
 
+export const inter = Inter({
+  subsets: ['latin']
+})
+
 // export * from './customStyles'
 
-
-export const theme1 = extendTheme({
-  colors: {
-    brand: '#C50909',
-    brandAlpha: {
-      "50": "#FEE7E7",
-      "100": "#FCBBBB",
-      "200": "#FA8F8F",
-      "300": "#F86363",
-      "400": "#F63737",
-      "500": "#F40B0B",
-      "600": "#C30909",
-      "700": "#920707",
-      "800": "#620404",
-      "900": "#310202"
-    },
-  },
-})
