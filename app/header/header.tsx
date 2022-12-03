@@ -122,7 +122,7 @@ export default function WithSubnavigation() {
               aria-label="Toggle theme"
               _hover={{
                 textDecoration: 'none',
-                color: useColorModeValue('brand', 'white'),
+                color: useColorModeValue('brand', 'brandAlpha.hover'),
               }} />
 
 
@@ -169,7 +169,7 @@ const DesktopNav = () => {
         aria-label="Toggle theme"
         _hover={{
           textDecoration: 'none',
-          color: useColorModeValue('brand', 'white'),
+          color: useColorModeValue('brand', 'brandAlpha.hover'),
         }} />
 
     </Stack>
