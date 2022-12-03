@@ -35,5 +35,7 @@ export const DesktopSubNav = ({ label, href }: NavItem) => {
     </Link>
   );
 
-};
+  // Ideally this should be
+  // <DesktopSubNavItem> { label } </DesktopSubNavItem>
 
+};

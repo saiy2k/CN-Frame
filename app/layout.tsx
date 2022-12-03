@@ -5,7 +5,7 @@ import Header from './header/header';
 import Footer from './footer';
 import './globals.css';
 
-import { inter, getBullBitcoinTheme, theme1 } from './theme';
+import { inter, getBullBitcoinTheme } from './theme';
 
 const theme = getBullBitcoinTheme();
 

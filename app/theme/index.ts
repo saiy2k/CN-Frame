@@ -29,5 +29,5 @@ export const inter = Inter({
   subsets: ['latin']
 })
 
-// export * from './customStyles'
+export * from './customStyles'
 
