@@ -8,8 +8,9 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { FiArrowRight } from 'react-icons/fi';
-import { textStyles } from './theme';
+import { BuySellWidget } from './BuySellWidget';
 
+import { textStyles } from './theme';
 
 export default function Home() {
   return (
@@ -107,9 +108,8 @@ export default function Home() {
         </SimpleGrid>
       </Flex>
 
-      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' bg='red.50'>
-        Buy / Sell widget
-        Ole ole oleee oleee oleeeeee!
+      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' p={5} minW='420px'>
+        <BuySellWidget />
       </Box>
     </Flex>
   )
@@ -132,3 +132,4 @@ const ActionButton = ({href, title, text}: {href: string, title: string, text: s
     </Flex>
   );
 }
+;
