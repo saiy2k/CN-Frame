@@ -180,8 +180,10 @@ export const styles = stylesMap({
   },
 })
 
+/*
 export type StyleConfigProps = {
 	theme: Theme
 	colorMode: ColorMode
 	colorScheme: string
 }
+*/
