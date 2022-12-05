@@ -24,13 +24,6 @@ const baseTextStyles = stylesMap({
     letterSpacing: 0,
     color: 'gray.800',
   },
-  h3: {
-    fontSize: 'clamp(1.5rem, 1.75vw, 1.75rem)',
-    fontWeight: 'bold',
-    lineHeight: 1.16,
-    letterSpacing: 0,
-    color: 'gray.800',
-  },
   h4: {
     fontSize: 'clamp(1.25rem, 1.5vw, 1.5rem)',
     fontWeight: 'bold',
@@ -61,29 +54,30 @@ const baseTextStyles = stylesMap({
     lineHeight: 1.33,
   },
 
-  bbh3: {
+  h3: {
     color: 'black',
-    fontSize: { base: '20px', lg: '32px' },
+    fontSize: { base: '18px', lg: '24px' },
     fontWeight: 300,
-    lineHeight: { base: '40px', lg: '48px'},
+    lineHeight: { base: '24px', lg: '36px'},
   },
  
-  bbh3b: {
+  h3b: {
     color: 'black',
-    fontSize: { base: '32px', lg: '32px' },
+    fontSize: { base: '24px', lg: '24px' },
     fontWeight: 700,
-    lineHeight: { base: '40px', lg: '48px'},
+    lineHeight: { base: '40px', lg: '36px'},
   },
 
   actionButtonTitle: {
-    fontSize: '20px',
+    fontSize: { base: '16px', lg: '18px' },
     fontWeight: '600',
     lineHeight: '24px',
   },
   actionButtonText: {
-    fontSize: '20px',
-    fontWeight: '200',
-    lineHeight: '24px',
+    color: 'gray.600',
+    fontSize: { base: '16px', lg: '18px' },
+    fontWeight: '300',
+    lineHeight: '16px',
   }
 })
 
