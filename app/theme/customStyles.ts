@@ -1,5 +1,5 @@
 import { SystemStyleObject, SystemStyleObjectRecord } from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools';
+// import { mode } from '@chakra-ui/theme-tools';
 
 // Helps with typing
 const stylesMap = <T extends SystemStyleObjectRecord>(map: T) => map
@@ -66,7 +66,7 @@ const baseTextStyles = stylesMap({
   */
 
   h3b: {
-    color: mode('black', 'white'),
+    color: 'black',
     fontSize: { base: '24px', xl: '24px', '2xl': '32px' },
     fontWeight: 700,
     lineHeight: { base: '40px', xl: '36px', '2xl': '48px'},

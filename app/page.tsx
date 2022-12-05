@@ -23,7 +23,7 @@ export default function Home() {
               Bitcoin/CAD
             </chakra.h3>
             <chakra.h3 {...textStyles.h3b}>
-              $23,456.78 <chakra.span {...textStyles.h3b} color='red' fontSize={{base: '12px'}}> -17.66% </chakra.span>
+              $23,456.78 <chakra.span {...textStyles.h3b} color={'#ff0000'} fontSize={{base: '12px'}}> -17.66% </chakra.span>
             </chakra.h3>
             <Image src='/chart-placeholder.png' mt={1} w='full' />
           </Box>
