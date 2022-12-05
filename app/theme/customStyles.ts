@@ -60,7 +60,21 @@ const baseTextStyles = stylesMap({
     fontSize: '0.75rem',
     lineHeight: 1.33,
   },
-  
+
+  bbh3: {
+    color: 'black',
+    fontSize: { base: '20px', lg: '32px' },
+    fontWeight: 300,
+    lineHeight: { base: '40px', lg: '48px'},
+  },
+ 
+  bbh3b: {
+    color: 'black',
+    fontSize: { base: '32px', lg: '32px' },
+    fontWeight: 700,
+    lineHeight: { base: '40px', lg: '48px'},
+  },
+
   actionButtonTitle: {
     fontSize: '20px',
     fontWeight: '600',
