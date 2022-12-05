@@ -13,7 +13,7 @@ import { DesktopSubNav } from './desktopSubNav';
 
 export const DesktopMainNav = ({href, children, label, icon, iconSize}: any) => {
   const linkColor = useColorModeValue('black', 'gray.200');
-  const linkHoverColor = useColorModeValue('brand', 'white');
+  const linkHoverColor = useColorModeValue('brand', 'brandAlpha.hover');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
