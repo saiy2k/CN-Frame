@@ -13,7 +13,7 @@ import { textStyles } from './theme';
 
 export default function Home() {
   return (
-    <Flex w='100%' maxW='1280px' m='auto'>
+    <Flex w='100%' maxW='1600px' m='auto'>
       <Flex direction='column'>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing='4px' flex='auto'>

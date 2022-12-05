@@ -56,26 +56,26 @@ const baseTextStyles = stylesMap({
 
   h3: {
     color: 'black',
-    fontSize: { base: '18px', lg: '24px' },
+    fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
     fontWeight: 300,
-    lineHeight: { base: '24px', lg: '36px'},
+    lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
   },
  
   h3b: {
     color: 'black',
-    fontSize: { base: '24px', lg: '24px' },
+    fontSize: { base: '24px', xl: '24px', '2xl': '32px' },
     fontWeight: 700,
-    lineHeight: { base: '40px', lg: '36px'},
+    lineHeight: { base: '40px', xl: '36px', '2xl': '48px'},
   },
 
   actionButtonTitle: {
-    fontSize: { base: '16px', lg: '18px' },
+    fontSize: { base: '16px', xl: '16px', '2xl': '20px' },
     fontWeight: '600',
     lineHeight: '24px',
   },
   actionButtonText: {
     color: 'gray.600',
-    fontSize: { base: '16px', lg: '18px' },
+    fontSize: { base: '16px', xl: '16px', '2xl': '20px' },
     fontWeight: '300',
     lineHeight: '16px',
   }

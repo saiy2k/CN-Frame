@@ -17,6 +17,13 @@ const theme: DeepPartial<ChakraTheme> = {
   styles,
   colors,
   components,
+  breakpoints: {
+    sm: '576pm',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+    '2xl': '1600px'
+  }
 }
 
 export function getBullBitcoinTheme(
