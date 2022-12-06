@@ -4,6 +4,7 @@ import {
   Button,
   ButtonGroup,
   chakra,
+  Image,
   Input,
   InputGroup,
   InputRightElement,
@@ -15,6 +16,7 @@ import {
   TabPanel, 
   Radio, 
   RadioGroup, 
+  Select,
   Stack,
   useColorModeValue} from '@chakra-ui/react'
 
@@ -91,10 +93,92 @@ export const BuySellWidget = () => {
 
           </Stack>
         </TabPanel>
+
         <TabPanel>
-          <p> Todo </p>
+          <Stack m={5}>
+
+            <chakra.p {...textStyles.p} color='gray.400' mb={1}>
+              We convert any btc amount that is sent to provided address. And your cash balance is incremented accordingly.
+            </chakra.p>
+            <br/>
+
+            <chakra.p {...textStyles.p} color='gray.400' mb={1}>
+              Select currency
+            </chakra.p>
+            <Select size='lg' placeholder='Select currency'>
+              <option value='option1'> Canadian Dollars - CAD </option>
+              <option value='option2'> Mexican pesos - MXN </option>
+            </Select>
+            <br/>
+
+            <chakra.p {...textStyles.p} color='gray.400' mb={1}>
+              Bitcoin price - quote expires in 30 seconds (timer)
+            </chakra.p>
+            <chakra.h3 {...textStyles.h3} mb={5}>
+              $21,192.00 CAD
+            </chakra.h3>
+            <br/>
+
+            <chakra.p {...textStyles.p} color='gray.400' mb={1}>
+              Trade status
+            </chakra.p>
+            <chakra.h4 {...textStyles.h4} mb={5}>
+              Awaiting payment
+            </chakra.h4>
+            <br/>
+
+            <Tabs isFitted w='full'>
+              <TabList>
+                <Tab _selected={{ borderBottom: '6px', borderColor: useColorModeValue('gray.700', 'gray.50'), borderStyle: 'solid' }}> Bitcoin </Tab>
+                <Tab _selected={{ borderBottom: '6px', borderColor: useColorModeValue('gray.700', 'gray.50'), borderStyle: 'solid' }}> Lightning </Tab>
+              </TabList>
+
+              <TabPanels>
+
+                <TabPanel>
+                  <Stack>
+
+                    <chakra.p {...textStyles.p} color='gray.400' mb={1}>
+                      Send bitcoin to this address
+                    </chakra.p>
+
+                    <b> bc19dsksiamdjaluekdmsdjfk293u5mksmd </b>
+
+                    <chakra.p {...textStyles.p} color='gray.400' mt={1}>
+                      or Scan this QR code
+                    </chakra.p>
+
+                    <Image src='/qrcode.png' />
+
+                  </Stack>
+                </TabPanel>
+
+                <TabPanel>
+                  <Stack>
+
+                    <chakra.p {...textStyles.p} color='gray.400' mb={1}>
+                      Send bitcoin to this lightning address
+                    </chakra.p>
+
+                    <b> satoshi@bullbitcoin.com </b>
+
+                    <chakra.p {...textStyles.p} color='gray.400' mt={1}>
+                      or Scan this LNURL-Pay code
+                    </chakra.p>
+
+                    <Image src='/qrcode.png' />
+
+                  </Stack>
+                </TabPanel>
+
+              </TabPanels>
+            </Tabs>
+
+          </Stack>
         </TabPanel>
       </TabPanels>
     </Tabs>
   );
 }
+
+

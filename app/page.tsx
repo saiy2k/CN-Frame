@@ -108,7 +108,7 @@ export default function Home() {
         </SimpleGrid>
       </Flex>
 
-      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' p={5} minW='420px'>
+      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' p={5} w='420px'>
         <BuySellWidget />
       </Box>
     </Flex>
