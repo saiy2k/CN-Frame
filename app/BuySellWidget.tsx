@@ -15,7 +15,8 @@ import {
   TabPanel, 
   Radio, 
   RadioGroup, 
-  Stack } from '@chakra-ui/react'
+  Stack,
+  useColorModeValue} from '@chakra-ui/react'
 
 import { textStyles } from './theme';
 
@@ -26,8 +27,8 @@ export const BuySellWidget = () => {
   return (
     <Tabs isFitted w='full' border={1} borderStyle='solid' borderColor='gray.400' borderRadius={25}>
       <TabList>
-        <Tab _selected={{ borderBottom: '6px', borderColor:'gray.700', borderStyle: 'solid' }}> Buy Bitcoin </Tab>
-        <Tab _selected={{ borderBottom: '6px', borderColor:'gray.700', borderStyle: 'solid' }}> Sell Bitcoin </Tab>
+        <Tab _selected={{ borderBottom: '6px', borderColor: useColorModeValue('gray.700', 'gray.50'), borderStyle: 'solid' }}> Buy Bitcoin </Tab>
+        <Tab _selected={{ borderBottom: '6px', borderColor: useColorModeValue('gray.700', 'gray.50'), borderStyle: 'solid' }}> Sell Bitcoin </Tab>
       </TabList>
 
       <TabPanels>

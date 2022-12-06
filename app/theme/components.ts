@@ -105,6 +105,15 @@ export const components: ChakraTheme['components'] = {
       },
     },
   },
+
+  'chakra.h3': {
+     sizes: {
+      sm: { px: '1.125rem' },
+      md: { px: '1.125rem' },
+      lg: { px: '3.125rem' },
+      xl: { px: '3.5rem', fontSize: '3.5rem', minH: '50px' },
+    },
+  }
 }
 
 /*

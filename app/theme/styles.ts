@@ -1,12 +1,13 @@
 import { ChakraTheme } from '@chakra-ui/react'
+import { mode } from '@chakra-ui/theme-tools';
 
 export const styles: ChakraTheme['styles'] = {
-  global: {
+  global: (props: any) => ({
     body: {
-      color: 'gray.700',
+      color: mode('gray.700', 'whiteAlpha.900')(props),
       fontSize: ['1rem', '1.125rem'],
     }
-  }
+  })
 }
 
 /*

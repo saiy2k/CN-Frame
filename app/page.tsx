@@ -29,7 +29,7 @@ export default function Home() {
           </Box>
 
           <Box p={5}>
-            <chakra.h3 {...textStyles.h3}>
+            <chakra.h3>
               Bull Cash Balance
             </chakra.h3>
 
