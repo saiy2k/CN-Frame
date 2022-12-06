@@ -17,7 +17,7 @@ const theme: DeepPartial<ChakraTheme> = {
   styles,
   colors,
   components,
-  breakpoints: {
+  breakpoints: { // From bootstrap 5.x
     sm: '576pm',
     md: '768px',
     lg: '992px',

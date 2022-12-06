@@ -29,7 +29,7 @@ export default function Home() {
           </Box>
 
           <Box p={5}>
-            <chakra.h3 {...textStyles.h3}>
+            <chakra.h3>
               Bull Cash Balance
             </chakra.h3>
 
@@ -108,7 +108,7 @@ export default function Home() {
         </SimpleGrid>
       </Flex>
 
-      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' p={5} minW='420px'>
+      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' p={5} w='420px'>
         <BuySellWidget />
       </Box>
     </Flex>

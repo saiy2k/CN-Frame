@@ -1,5 +1,5 @@
 import { SystemStyleObject, SystemStyleObjectRecord } from '@chakra-ui/react'
-// import { mode } from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools';
 
 // Helps with typing
 const stylesMap = <T extends SystemStyleObjectRecord>(map: T) => map
@@ -16,14 +16,12 @@ const baseTextStyles = stylesMap({
     fontWeight: 'bold',
     lineHeight: 1.1,
     letterSpacing: 0,
-    color: 'gray.800',
   },
   h2: {
     fontSize: 'clamp(1.75rem, 2.5vw, 2rem)',
     fontWeight: 'bold',
     lineHeight: 1.16,
     letterSpacing: 0,
-    color: 'gray.800',
   },
   bodyLarge: {
     fontSize: 'clamp(1.25rem, 1.5vw, 1.5rem)',
@@ -50,7 +48,6 @@ const baseTextStyles = stylesMap({
   },
 
   h3: {
-    color: 'black',
     fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
     fontWeight: 300,
     lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
@@ -66,21 +63,18 @@ const baseTextStyles = stylesMap({
   */
 
   h3b: {
-    color: 'black',
     fontSize: { base: '24px', xl: '24px', '2xl': '32px' },
     fontWeight: 700,
     lineHeight: { base: '40px', xl: '36px', '2xl': '48px'},
   },
 
   h4: {
-    color: 'black',
     fontSize: { base: '14px', xl: '18px', '2xl': '24px' },
     fontWeight: 300,
     lineHeight: { base: '20px', xl: '30px', '2xl': '40px' },
   },
 
   h4b: {
-    color: 'black',
     fontSize: { base: '14px', xl: '18px', '2xl': '24px' },
     fontWeight: 700,
     lineHeight: { base: '20px', xl: '30px', '2xl': '40px'},
@@ -179,6 +173,11 @@ export const styles = stylesMap({
     bg: 'gray.50',
   },
 })
+
+/*
+  global: (props: any) => ({
+  })
+*/
 
 /*
 export type StyleConfigProps = {
