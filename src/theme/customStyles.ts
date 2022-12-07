@@ -47,52 +47,12 @@ const baseTextStyles = stylesMap({
     lineHeight: 1.33,
   },
 
-  h3: {
-    fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
-    fontWeight: 300,
-    lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
-  },
-
-  /*
-  h3: (props: StyleConfigProps): SystemStyleObject => ({
-    color: mode('black', 'white'),
-    fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
-    fontWeight: 300,
-    lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
-  }),
-  */
-
-  h3b: {
-    fontSize: { base: '24px', xl: '24px', '2xl': '32px' },
-    fontWeight: 700,
-    lineHeight: { base: '40px', xl: '36px', '2xl': '48px'},
-  },
-
-  h4: {
-    fontSize: { base: '14px', xl: '18px', '2xl': '24px' },
-    fontWeight: 300,
-    lineHeight: { base: '20px', xl: '30px', '2xl': '40px' },
-  },
-
-  h4b: {
-    fontSize: { base: '14px', xl: '18px', '2xl': '24px' },
-    fontWeight: 700,
-    lineHeight: { base: '20px', xl: '30px', '2xl': '40px'},
-  },
-
-  p: {
-    fontSize: { base: '12px', xl: '14px', '2xl': '16px' },
-    fontWeight: 400,
-    lineHeight: { base: '10px', xl: '14px', '2xl': '18px'},
-  },
-
   actionButtonTitle: {
     fontSize: { base: '16px', xl: '16px', '2xl': '20px' },
     fontWeight: '600',
     lineHeight: '24px',
   },
   actionButtonText: {
-    color: 'gray.600',
     fontSize: { base: '16px', xl: '16px', '2xl': '20px' },
     fontWeight: '300',
     lineHeight: '16px',

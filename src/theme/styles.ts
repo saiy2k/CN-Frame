@@ -6,7 +6,32 @@ export const styles: ChakraTheme['styles'] = {
     body: {
       color: mode('gray.700', 'whiteAlpha.900')(props),
       fontSize: ['1rem', '1.125rem'],
+    },
+
+    h2: {
+      fontSize: { base: '24px', xl: '24px', '2xl': '32px' },
+      fontWeight: 700,
+      lineHeight: { base: '40px', xl: '36px', '2xl': '48px'},
+    },
+
+    h3: {
+      fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
+      fontWeight: 300,
+      lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
+    },
+
+    h4: {
+      fontSize: { base: '14px', xl: '18px', '2xl': '24px' },
+      fontWeight: 300,
+      lineHeight: { base: '20px', xl: '30px', '2xl': '40px' },
+    },
+
+    p: {
+      fontSize: { base: '12px', xl: '14px', '2xl': '16px' },
+      fontWeight: 400,
+      lineHeight: { base: '10px', xl: '14px', '2xl': '18px'},
     }
+
   })
 }
 

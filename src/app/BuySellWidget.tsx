@@ -87,7 +87,7 @@ export const BuySellWidget = () => {
               </Box>
 
               <Box mb={8} textAlign='center'>
-                <Button colorScheme='blue' px={25}> Preview </Button>
+                <Button colorScheme='blue'> Preview </Button>
               </Box>
             </form>
 

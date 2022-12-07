@@ -5,7 +5,7 @@ import Header from './header/header';
 import Footer from './footer';
 import './globals.css';
 
-import { inter, getBullBitcoinTheme } from './theme';
+import { inter, getBullBitcoinTheme } from '@theme/index';
 
 const theme = getBullBitcoinTheme();
 
@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className={inter.className}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <ChakraProvider theme={theme}>
           <Header />
           {children}
