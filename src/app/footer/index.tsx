@@ -51,7 +51,7 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: useColorModeValue('blackAlpha.300', 'whiteAlpha.300'),
       }}>
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
@@ -109,7 +109,7 @@ export default function Footer() {
           spacing={4}
           justify={{ md: 'space-between' }}
           align={{ md: 'center' }}>
-          <Text>Powered by Satoshi Portal Inc. © 2022. FINTRAC registration #M16730720</Text>
+          <Text lineHeight='20px'>Powered by Satoshi Portal Inc. © 2022. FINTRAC registration #M16730720</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Facebook'} href={'https://www.facebook.com/BullBitcoinCa/'}>
               <FaFacebook />
