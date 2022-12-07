@@ -1,9 +1,15 @@
-import { ChakraTheme, DeepPartial, extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
+import { defineStyleConfig, ChakraTheme, DeepPartial, extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
 import { Dancing_Script, Inter, Raleway } from '@next/font/google';
 
 import { colors } from './colors';
 import { components } from './components'
 import { styles } from './styles'
+
+const Widget = defineStyleConfig({
+  baseStyle: {
+    p: 5
+  }
+});
 
 const theme: DeepPartial<ChakraTheme> = {
   config: {
@@ -16,7 +22,10 @@ const theme: DeepPartial<ChakraTheme> = {
   },
   styles,
   colors,
-  components,
+  components: {
+    ...components,
+    Widget
+  },
   breakpoints: { // From bootstrap 5.x
     sm: '576pm',
     md: '768px',

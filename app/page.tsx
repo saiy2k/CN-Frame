@@ -1,6 +1,6 @@
 'use client';
 
-import { chakra, Box, SimpleGrid } from '@chakra-ui/react'
+import { chakra, Box, SimpleGrid, useStyleConfig } from '@chakra-ui/react'
 import {
   Icon,
   Image,
@@ -18,15 +18,8 @@ export default function Home() {
       <Flex direction='column'>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing='4px' flex='auto'>
-          <Box p={5}>
-            <chakra.h3 {...textStyles.h3}>
-              Bitcoin/CAD
-            </chakra.h3>
-            <chakra.h3 {...textStyles.h3b}>
-              $23,456.78 <chakra.span {...textStyles.h3b} color={'#ff0000'} fontSize={{base: '12px'}}> -17.66% </chakra.span>
-            </chakra.h3>
-            <Image src='/chart-placeholder.png' mt={1} w='full' />
-          </Box>
+
+          <BitcoinPrice currency="CAD" />
 
           <Box p={5}>
             <chakra.h3>
@@ -34,21 +27,21 @@ export default function Home() {
             </chakra.h3>
 
             <Box px={5} py={4} mb={5} mt={4} border={1} borderStyle='solid' borderRadius={30} borderColor='gray.400'>
-              <chakra.h3 {...textStyles.h3}>
+              <h3>
                 Canadian dollar balance
-              </chakra.h3>
+              </h3>
               <chakra.h3 {...textStyles.h3b}>
                 $500,000.00 <chakra.span {...textStyles.h3b} fontSize={{base: '12px'}}> CAD </chakra.span>
               </chakra.h3>
             </Box>
 
             <Box px={5} py={4} mb={5} mt={4} border={1} borderStyle='solid' borderRadius={30} borderColor='gray.400'>
-              <chakra.h3 {...textStyles.h3}>
+              <h3>
                 Mexican pesos balance
-              </chakra.h3>
-              <chakra.h3 {...textStyles.h3b}>
+              </h3>
+              <h3>
                 $5,000,000.00 <chakra.span {...textStyles.h3b} fontSize={{base: '12px'}}> MXN </chakra.span>
-              </chakra.h3>
+              </h3>
             </Box>
           </Box>
 
@@ -67,9 +60,9 @@ export default function Home() {
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing='4px'>
           <Box px={5} pt={3}>
-            <chakra.h3 {...textStyles.h3}>
+            <h3>
               Payments
-            </chakra.h3>
+            </h3>
           </Box>
           <Box px={5}>
           </Box>
@@ -88,9 +81,9 @@ export default function Home() {
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing='4px'>
           <Box px={5} pt={3}>
-            <chakra.h3 {...textStyles.h3}>
+            <h3>
               Wallets
-            </chakra.h3>
+            </h3>
           </Box>
           <Box px={5}>
           </Box>
@@ -132,4 +125,24 @@ const ActionButton = ({href, title, text}: {href: string, title: string, text: s
     </Flex>
   );
 }
-;
+
+const BitcoinPrice = ({currency}: {currency: string}) => {
+
+  return (
+    <Widget>
+      <h3>
+        Bitcoin/{currency}
+      </h3>
+      <h2>
+        $23,456.78 <chakra.span color={'#ff0000'} fontSize={{base: '12px'}}> -17.66% </chakra.span>
+      </h2>
+      <Image src='/chart-placeholder.png' mt={1} w='full' />
+    </Widget>
+  );
+}
+
+const Widget = (props: any) => {
+  const { variant, ...rest} = props;
+  const styles = useStyleConfig('Widget', {variant});
+  return <Box __css={ styles } {...rest} />;
+}

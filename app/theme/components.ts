@@ -29,6 +29,7 @@ function getAlertBg(props: StyleFunctionProps): string {
 }
 
 export const components: ChakraTheme['components'] = {
+ 
   Alert: {
     baseStyle: { container: { rounded: 8, alignItems: 'start', bg: 'green' } },
     variants: {
@@ -60,6 +61,7 @@ export const components: ChakraTheme['components'] = {
         if (colorScheme !== 'red') return base
         return {
           ...base,
+          paddingX: 100,
           bg: 'gradient.red',
           transition: 'none', // transision between gradient bg and solid bg creates a flash of white
           _hover: {
@@ -71,6 +73,8 @@ export const components: ChakraTheme['components'] = {
         }
       },
     },
+    defaultProps: {
+    }
   },
   NumberInput: {
     ...inputTheme,
@@ -107,7 +111,7 @@ export const components: ChakraTheme['components'] = {
   },
 
   'chakra.h3': {
-     sizes: {
+    sizes: {
       sm: { px: '1.125rem' },
       md: { px: '1.125rem' },
       lg: { px: '3.125rem' },

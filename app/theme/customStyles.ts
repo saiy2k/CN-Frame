@@ -47,12 +47,6 @@ const baseTextStyles = stylesMap({
     lineHeight: 1.33,
   },
 
-  h3: {
-    fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
-    fontWeight: 300,
-    lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
-  },
-
   /*
   h3: (props: StyleConfigProps): SystemStyleObject => ({
     color: mode('black', 'white'),

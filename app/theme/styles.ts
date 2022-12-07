@@ -6,7 +6,20 @@ export const styles: ChakraTheme['styles'] = {
     body: {
       color: mode('gray.700', 'whiteAlpha.900')(props),
       fontSize: ['1rem', '1.125rem'],
+    },
+
+    h2: {
+      fontSize: { base: '24px', xl: '24px', '2xl': '32px' },
+      fontWeight: 700,
+      lineHeight: { base: '40px', xl: '36px', '2xl': '48px'},
+    },
+
+    h3: {
+      fontSize: { base: '18px', xl: '24px', '2xl': '32px' },
+      fontWeight: 300,
+      lineHeight: { base: '24px', xl: '36px', '2xl': '48px' },
     }
+
   })
 }
 
