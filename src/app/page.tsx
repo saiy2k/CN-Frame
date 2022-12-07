@@ -1,16 +1,21 @@
 'use client';
 
-import { chakra, Box, SimpleGrid } from '@chakra-ui/react'
-import {
+import { 
+  Box,
   Flex,
-} from '@chakra-ui/react';
+  SimpleGrid
+} from '@chakra-ui/react'
 
 import { 
-  ActionButton, 
+  ActionItems,
   BitcoinPrice, 
   CashBalance
-} from './DashboardWidgetes';
-import { BuySellWidget } from './BuySellWidget';
+} from './DashboardWidgets';
+
+import {
+  ActionButton,
+  BuySellWidget
+} from '@shared-components/index';
 
 export default function Home() {
 
@@ -23,6 +28,7 @@ export default function Home() {
     amount: '$5,000,000.00',
     symbol: 'MXN'
   }];
+
   return (
     <Flex w='100%' maxW='1600px' m='auto'>
       <Flex direction='column'>
@@ -77,20 +83,14 @@ export default function Home() {
           </Box>
 
           <Box p={5}>
-            <ActionButton title='Pay in Fiat with Bitcoin' text='Send BTC and we send fiat to any recipient or biller' href='#' />
-            <ActionButton title='Get Paid with Bitcoin' text='Create a Bitcoin invoice. Receive either fiat or BTC' href='#' />
-            <ActionButton title='Pay Bitcoin Invoice' text='Use your cash balance to pay someone in BTC' href='#' />
-          </Box>
-          <Box p={5}>
-            <ActionButton title='Payroll Deposit' text='Receive fiat paycheck directly in cash balance' href='#' />
-            <ActionButton title='Send Bull Transfer' text='Send fiat from cash account to a Bull user' href='#' />
-            <ActionButton title='Receive Bull Transfer' text='Receive fiat from a Bull user into your cash account' href='#' />
+            <ActionButton title='Forex' text='Convert cash balance to another currency' href='#' />
           </Box>
         </SimpleGrid>
       </Flex>
 
-      <Box display={{ base: 'none', lg: 'flex'}} flex='auto' p={5} w='420px'>
+      <Box display={{ base: 'none', lg: 'flex'}} flexDirection='column' flex='auto' p={5} w='420px'>
         <BuySellWidget />
+        <ActionItems />
       </Box>
     </Flex>
   )
