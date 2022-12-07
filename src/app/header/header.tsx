@@ -157,9 +157,9 @@ const DesktopNav = () => {
         <DesktopMainNav key={navItem.id} {...navItem} />
       ))}
 
-      <DesktopMainNav icon={HiBell} iconSize={6} href="#" label="Notification" children={null} />
+      <DesktopMainNav icon={HiBell} iconSize={6} href="#" label="Notification"></DesktopMainNav>
       
-      <DesktopMainNav icon={FaUser} iconSize={5} href="#" label="User" children={USER_NAV_ITEMS} />
+      <DesktopMainNav icon={FaUser} iconSize={5} href="#" label="User">{USER_NAV_ITEMS}</DesktopMainNav>
 
       <IconButton 
         onClick={toggleColorMode} 

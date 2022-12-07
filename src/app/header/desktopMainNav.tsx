@@ -15,6 +15,7 @@ export const DesktopMainNav = ({href, children, label, icon, iconSize}: any) => 
   const linkColor = useColorModeValue('black', 'gray.200');
   const linkHoverColor = useColorModeValue('brand', 'brandAlpha.hover');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const borderColor = useColorModeValue('gray.800', 'gray.700');
 
   return (
     <Popover trigger={'hover'} placement={'bottom-start'} id={'popover'} isLazy>
@@ -52,7 +53,7 @@ export const DesktopMainNav = ({href, children, label, icon, iconSize}: any) => 
         <PopoverContent
           border={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.800', 'gray.700')}
+          borderColor={borderColor}
           bg={popoverContentBgColor}
           p={4}
           rounded={'sm'}

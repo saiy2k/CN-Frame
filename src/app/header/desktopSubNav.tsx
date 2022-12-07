@@ -8,6 +8,9 @@ import {
 } from '@chakra-ui/react';
 
 export const DesktopSubNav = ({ label, href }: NavItem) => {
+  const bgColor = useColorModeValue('gray.900', 'gray.50');
+  const color = useColorModeValue('gray.50', 'gray.900');
+  const hoverColor = useColorModeValue('gray.50', 'gray.900');
 
   if (label === '---') {
     return <Box>
@@ -23,12 +26,12 @@ export const DesktopSubNav = ({ label, href }: NavItem) => {
       p={2}
       rounded={'2xl'}
       _hover={{ 
-        bg: useColorModeValue('gray.900', 'gray.50'), 
-        color: useColorModeValue('gray.50', 'gray.900')
+        bg: bgColor, 
+        color: color
       }}>
         <Text
           transition={'all .3s ease'}
-          _groupHover={{ color: useColorModeValue('gray.50', 'gray.900') }}
+          _groupHover={{ color: hoverColor}}
           fontWeight={500}>
           {label}
         </Text>
