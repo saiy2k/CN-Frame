@@ -1,49 +1,37 @@
 'use client';
 
-import { chakra, Box, SimpleGrid, useStyleConfig } from '@chakra-ui/react'
+import { chakra, Box, SimpleGrid } from '@chakra-ui/react'
 import {
-  Icon,
-  Image,
   Flex,
-  Link,
 } from '@chakra-ui/react';
-import { FiArrowRight } from 'react-icons/fi';
+
+import { 
+  ActionButton, 
+  BitcoinPrice, 
+  CashBalance
+} from './DashboardWidgetes';
 import { BuySellWidget } from './BuySellWidget';
 
-import { textStyles } from './theme';
-
 export default function Home() {
+
+  const balances = [{
+    name: 'Canadian dollar balance',
+    amount: '$500,000.00',
+    symbol: 'CAD'
+  }, {
+    name: 'Mexical pesos balance',
+    amount: '$5,000,000.00',
+    symbol: 'MXN'
+  }];
   return (
     <Flex w='100%' maxW='1600px' m='auto'>
       <Flex direction='column'>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing='4px' flex='auto'>
 
-          <BitcoinPrice currency="CAD" />
+          <BitcoinPrice currency='CAD' />
 
-          <Box p={5}>
-            <chakra.h3>
-              Bull Cash Balance
-            </chakra.h3>
-
-            <Box px={5} py={4} mb={5} mt={4} border={1} borderStyle='solid' borderRadius={30} borderColor='gray.400'>
-              <h3>
-                Canadian dollar balance
-              </h3>
-              <chakra.h3 {...textStyles.h3b}>
-                $500,000.00 <chakra.span {...textStyles.h3b} fontSize={{base: '12px'}}> CAD </chakra.span>
-              </chakra.h3>
-            </Box>
-
-            <Box px={5} py={4} mb={5} mt={4} border={1} borderStyle='solid' borderRadius={30} borderColor='gray.400'>
-              <h3>
-                Mexican pesos balance
-              </h3>
-              <h3>
-                $5,000,000.00 <chakra.span {...textStyles.h3b} fontSize={{base: '12px'}}> MXN </chakra.span>
-              </h3>
-            </Box>
-          </Box>
+          <CashBalance balances={balances} />
 
         </SimpleGrid>
 
@@ -108,41 +96,3 @@ export default function Home() {
   )
 }
 
-const ActionButton = ({href, title, text}: {href: string, title: string, text: string}) => {
-  return (
-    <Flex mb={4}>
-      <Image 
-        boxSize='74px'
-        borderRadius='12px'
-        src="/bitcoin-icon.png" />
-      <Box ml={2}>
-        <Link {...textStyles.actionButtonTitle}> { title } </Link>
-        <chakra.p {...textStyles.actionButtonText}>
-          { text }
-          <Icon ml={2} as={FiArrowRight} />
-        </chakra.p>
-      </Box>
-    </Flex>
-  );
-}
-
-const BitcoinPrice = ({currency}: {currency: string}) => {
-
-  return (
-    <Widget>
-      <h3>
-        Bitcoin/{currency}
-      </h3>
-      <h2>
-        $23,456.78 <chakra.span color={'#ff0000'} fontSize={{base: '12px'}}> -17.66% </chakra.span>
-      </h2>
-      <Image src='/chart-placeholder.png' mt={1} w='full' />
-    </Widget>
-  );
-}
-
-const Widget = (props: any) => {
-  const { variant, ...rest} = props;
-  const styles = useStyleConfig('Widget', {variant});
-  return <Box __css={ styles } {...rest} />;
-}
