@@ -57,6 +57,7 @@ export const DesktopMainNav = ({href, children, label, icon, iconSize}: any) => 
           bg={popoverContentBgColor}
           p={4}
           rounded={'sm'}
+          ml='-21px'
           w={'18em'}>
           <Stack>
             {children.map((child: any) => (

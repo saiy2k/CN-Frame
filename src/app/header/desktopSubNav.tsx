@@ -23,8 +23,8 @@ export const DesktopSubNav = ({ label, href }: NavItem) => {
       href={href}
       role={'group'}
       display={'block'}
-      p={2}
-      rounded={'2xl'}
+      p={3}
+      rounded={'xl'}
       _hover={{ 
         bg: bgColor, 
         color: color

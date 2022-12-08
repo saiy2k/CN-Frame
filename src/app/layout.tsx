@@ -1,7 +1,7 @@
 'use client';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 
-import Header from './header/header';
+import Header from './header';
 import Footer from './footer';
 import './globals.css';
 
